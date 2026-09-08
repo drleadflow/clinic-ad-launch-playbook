@@ -1,0 +1,6 @@
+campaigns/
+*.excalidraw
+**/creative/feed/
+**/creative/story/
+__pycache__/
+.DS_Store

@@ -1,0 +1,104 @@
+<title><Client> Creative Review</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{--bg:#f6f3ec;--paper:#ffffff;--ink:#1c1a17;--muted:#6b655b;--line:#e4ded2;--gold:#a6832b;--gold-soft:#f2e9d3;--ok:#1f7a4d;--ok-soft:#e1f2e8;--warn:#9a4b1c;--warn-soft:#f8e6da;--chip:#efeae0;--shadow:0 1px 2px rgba(28,26,23,.06),0 8px 24px rgba(28,26,23,.06)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#15130f;--paper:#1e1b16;--ink:#f1ece2;--muted:#a59d8f;--line:#2e2a23;--gold:#d3b163;--gold-soft:#2b2417;--ok:#5fc48e;--ok-soft:#173023;--warn:#e29a6d;--warn-soft:#33200f;--chip:#26221b;--shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35)}}
+:root[data-theme="dark"]{--bg:#15130f;--paper:#1e1b16;--ink:#f1ece2;--muted:#a59d8f;--line:#2e2a23;--gold:#d3b163;--gold-soft:#2b2417;--ok:#5fc48e;--ok-soft:#173023;--warn:#e29a6d;--warn-soft:#33200f;--chip:#26221b;--shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Public Sans",system-ui,-apple-system,Segoe UI,sans-serif;font-size:15px;line-height:1.45}
+header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:14px 20px;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center}
+h1{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:22px;margin:0;letter-spacing:.01em}
+.sub{color:var(--muted);font-size:13px}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin-left:auto}
+nav button{border:1px solid var(--line);background:var(--paper);color:var(--ink);padding:7px 12px;border-radius:999px;font:inherit;font-weight:600;cursor:pointer}
+nav button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+nav button:focus-visible,.act button:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.tally{display:flex;gap:14px;font-size:13px;color:var(--muted)}.tally b{color:var(--ink)}
+main{max-width:1280px;margin:0 auto;padding:20px}
+.intro{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:20px;box-shadow:var(--shadow);max-width:70ch}
+.intro p{margin:6px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);display:flex;flex-direction:column;overflow:hidden}
+.post{padding:12px 14px 0}
+.who{display:flex;align-items:center;gap:10px}.av{width:38px;height:38px;border-radius:50%;background:var(--gold-soft);color:var(--gold);display:grid;place-items:center;font-weight:700;font-family:Fraunces,serif}
+.who .n{font-weight:700;font-size:14px}.who .s{font-size:12px;color:var(--muted)}
+.ptext{font-size:14px;margin:10px 0 10px;white-space:pre-wrap}
+.card img{width:100%;display:block;background:#000}
+.lnk{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 14px;background:var(--chip);border-top:1px solid var(--line)}
+.lnk .h{font-weight:700;font-size:14px}.lnk .d{font-size:12px;color:var(--muted)}
+.cta{border:1px solid var(--line);background:var(--paper);color:var(--ink);padding:7px 12px;border-radius:6px;font-weight:600;font-size:13px;white-space:nowrap}
+.meta{display:flex;align-items:center;gap:8px;padding:10px 14px 0;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.chip{background:var(--chip);padding:3px 8px;border-radius:999px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+.chip.hi{background:var(--ok-soft);color:var(--ok)}.chip.lo{background:var(--warn-soft);color:var(--warn)}
+.why{padding:6px 14px 0;font-size:13px;color:var(--muted)}
+.act{display:flex;gap:8px;padding:12px 14px;align-items:center;flex-wrap:wrap}
+.act button{border:1px solid var(--line);background:var(--paper);color:var(--ink);font:inherit;font-weight:600;padding:8px 12px;border-radius:8px;cursor:pointer}
+.act button.on-approved{background:var(--ok-soft);color:var(--ok);border-color:var(--ok)}
+.act button.on-changes{background:var(--warn-soft);color:var(--warn);border-color:var(--warn)}
+.act .st{margin-left:auto;font-size:12px;color:var(--muted)}
+textarea{width:100%;margin:0 14px 14px;width:calc(100% - 28px);border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;font-size:13px;padding:8px;min-height:44px;resize:vertical}
+.copy{margin:8px 14px 0;border:1px solid var(--line);border-radius:8px;background:var(--bg);font-size:13px}.copy summary{cursor:pointer;padding:8px 10px;font-weight:600}.copy dl{margin:0;padding:0 10px 10px;display:grid;grid-template-columns:auto 1fr;gap:4px 10px}.copy dt{color:var(--muted);font-weight:600}.copy dd{margin:0;white-space:pre-wrap}.copy button{margin:0 10px 10px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font:inherit;font-size:12px;font-weight:600;padding:5px 10px;border-radius:6px;cursor:pointer}
+.banner{margin:0 0 16px;padding:10px 14px;border-radius:10px;background:var(--gold-soft);color:var(--ink);font-size:13px}
+.banner.hidden{display:none}
+footer{color:var(--muted);font-size:12px;text-align:center;padding:30px 20px}
+@media (prefers-reduced-motion:no-preference){.act button{transition:background .15s}}
+</style>
+<header>
+  <div><h1><Client> Creative Review</h1><div class="sub">Wave 1 slates, shown as they will appear in the feed. Approve, or ask for changes and say what.</div></div>
+  <div class="tally" id="tally"></div>
+  <nav id="nav" aria-label="Offers"></nav>
+</header>
+<main>
+  <div class="intro">
+    <p><b>How to use this page.</b> Each card is one ad as Houston will see it: the page name, the primary text, the image, the headline, the button. The gold chip is our internal grade out of 10 from the scorecard. Open <b>Ad copy</b> under any card to read the primary text, headline, description and button exactly as they will be loaded, and copy them in one tap. Tap <b>Approve</b> or <b>Changes</b> and add a note if you want wording or imagery adjusted. Your marks save for everyone with the link.</p>
+    <p>Compliance already applied: no FDA claims, no permanent or weight-loss language, no result photos, deposit and financing wording per the client sheet. Prices appear only where the practice has published them.</p>
+  </div>
+  <div class="banner hidden" id="banner">Approvals are not saving on this view. You can still read everything; ask your ad manager for the shared link if you need to mark ads.</div>
+  <section class="grid" id="grid" aria-live="polite"></section>
+</main>
+<footer>Dr. Lead Flow for <Client name>. Internal review copy. Individual results vary.</footer>
+<script>
+const DATA = window.__CARDS__ /* replace with the object written by build-review.py */;
+const state = {offer: DATA.offers[0].key, marks: {}, db: null};
+const $ = s => document.querySelector(s);
+function esc(s){return s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+function ctaFor(c){return c.cta||"Learn more";}
+function headlineFor(c){return c.headline||c.name;}
+function render(){
+  const cards = DATA.cards.filter(c=>c.offer===state.offer);
+  $("#grid").innerHTML = cards.map(c=>{
+    const mk = state.marks[c.id]||{}; const g=c.grade; const cls=g==null?"":g>=8.5?"hi":g<7.5?"lo":"";
+    return `<article class="card" data-id="${c.id}">
+      <div class="post"><div class="who"><div class="av">V</div><div><div class="n"><Client name></div><div class="s">Sponsored</div></div></div>
+      <div class="ptext">${esc(c.primary)}</div></div>
+      <img src="${c.src}" alt="${esc(c.name)}" loading="lazy">
+      <div class="lnk"><div><div class="h">${esc(headlineFor(c))}</div><div class="d">${esc(c.desc||"yourclinic.com")}</div></div><span class="cta">${ctaFor(c)}</span></div>
+      <details class="copy"><summary>Ad copy</summary><dl><dt>Primary text</dt><dd>${esc(c.primary)}</dd><dt>Headline</dt><dd>${esc(c.headline||"")}</dd><dt>Description</dt><dd>${esc(c.desc||"")}</dd><dt>Button</dt><dd>${esc(ctaFor(c))}</dd></dl><button type="button" data-copy>Copy all</button></details>
+      <div class="meta"><span class="chip">${esc(c.name)}</span>${g!=null?`<span class="chip ${cls}">${g.toFixed(1)} / 10</span>`:""}<span class="chip">${c.ratio==="1x1"?"1:1":"4:5 + 9:16"}</span></div>
+      ${c.note?`<div class="why">${esc(c.note)}</div>`:""}
+      <div class="act"><button data-act="approved" class="${mk.status==="approved"?"on-approved":""}">Approve</button><button data-act="changes" class="${mk.status==="changes"?"on-changes":""}">Changes</button><span class="st">${mk.status?("marked "+mk.status+(mk.at?" · "+new Date(mk.at).toLocaleDateString():"")):"not reviewed"}</span></div>
+      <textarea placeholder="Note for the ad team (optional)" data-note>${esc(mk.note||"")}</textarea>
+    </article>`;}).join("");
+  $("#nav").innerHTML = DATA.offers.map(o=>`<button aria-pressed="${o.key===state.offer}" data-offer="${o.key}">${esc(o.label)} <span style="opacity:.6">${DATA.cards.filter(c=>c.offer===o.key).length}</span></button>`).join("");
+  const all=DATA.cards.length, ap=Object.values(state.marks).filter(m=>m.status==="approved").length, ch=Object.values(state.marks).filter(m=>m.status==="changes").length;
+  $("#tally").innerHTML=`<span><b>${ap}</b> approved</span><span><b>${ch}</b> changes</span><span><b>${all-ap-ch}</b> open</span>`;
+}
+$("#nav").addEventListener("click",e=>{const b=e.target.closest("button[data-offer]");if(!b)return;state.offer=b.dataset.offer;render();try{localStorage.setItem("review-offer",state.offer)}catch(_){}});
+$("#grid").addEventListener("click",async e=>{const b=e.target.closest("button[data-act]");if(!b)return;const card=b.closest(".card");const id=card.dataset.id;const note=card.querySelector("[data-note]").value.trim();await mark(id,b.dataset.act,note);});
+$("#grid").addEventListener("click",async e=>{const b=e.target.closest("button[data-copy]");if(!b)return;const card=b.closest(".card");const c=DATA.cards.find(x=>x.id===card.dataset.id);const t=`PRIMARY TEXT\n${c.primary}\n\nHEADLINE\n${c.headline}\n\nDESCRIPTION\n${c.desc}\n\nBUTTON\n${ctaFor(c)}`;try{await navigator.clipboard.writeText(t);b.textContent="Copied";setTimeout(()=>b.textContent="Copy all",1500);}catch(_){b.textContent="Select and copy";}});
+$("#grid").addEventListener("change",async e=>{const t=e.target.closest("[data-note]");if(!t)return;const card=t.closest(".card");const id=card.dataset.id;const cur=state.marks[id]||{};if(cur.status)await mark(id,cur.status,t.value.trim());});
+async function mark(id,status,note){
+  const rec={status,note,at:Date.now()};
+  state.marks[id]=rec; render();
+  if(!state.db){$("#banner").classList.remove("hidden");return;}
+  try{await state.db.doc("approvals/"+id).set(rec);}catch(err){$("#banner").classList.remove("hidden");}
+}
+try{state.offer=localStorage.getItem("review-offer")||state.offer;}catch(_){}
+render();
+(async()=>{
+  const db = await (window.claude && window.claude.use ? window.claude.use("db") : Promise.resolve(null));
+  if(!db){$("#banner").classList.remove("hidden");return;}
+  state.db=db;
+  try{db.collection("approvals").onSnapshot(snap=>{snap.docs.forEach(d=>{state.marks[d.id]=d.data();});render();},()=>{$("#banner").classList.remove("hidden");});}
+  catch(err){$("#banner").classList.remove("hidden");}
+})();
+</script>
