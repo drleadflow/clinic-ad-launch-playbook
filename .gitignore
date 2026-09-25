@@ -4,3 +4,6 @@ campaigns/
 **/creative/story/
 __pycache__/
 .DS_Store
+
+# cmux per-repo dock config (intentionally untracked)
+/.cmux/

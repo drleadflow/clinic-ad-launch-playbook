@@ -1,6 +1,6 @@
 # 00 · Workflow map
 
-Fourteen phases, one numbered file each, one folder per launch. Nothing launches without the files. The time budget is one ad manager, one offer: Day 1 phases 0 to 3, Day 2 phases 4 to 7, Day 3 phases 8 to 11, Day 4 to 5 phase 12. A second offer for the same clinic takes about half, because the client sheet, the skeleton, the clinicians and the board are inherited.
+Seventeen phases (14 to 16 were added after the MDW lip filler run, see docs/LESSONS.md), one numbered file each, one folder per launch. Nothing launches without the files. The time budget is one ad manager, one offer: Day 1 phases 0 to 3, Day 2 phases 4 to 7, Day 3 phases 8 to 11, Day 4 to 5 phase 12. A second offer for the same clinic takes about half, because the client sheet, the skeleton, the clinicians and the board are inherited.
 
 | Phase | File | Definition of done |
 |---|---|---|
@@ -17,6 +17,9 @@ Fourteen phases, one numbered file each, one folder per launch. Nothing launches
 | 10 Launch + workout | `04-launch-doc.md`, `05-workout-plan.md` | owner approval line; week 0 to 4 rules pre-written |
 | 11 Client review | review page link | three approvals: slate, claims, budget |
 | 12 Build | `build-manifest.json` | everything paused, pre-flight checklist all ticked, activate on the go |
-| 13 Weeks 1 to 4 | vault log | decisions dated; week-3 refresh; 30-day scorecard |
+| 13 Weeks 1 to 4 | vault log | decisions dated; week-3 refresh; 30-day scorecard; motion versions of winners only now |
+| 14 Belief shift | `13-shift-framework.md` | avatar, villain, two identities, Core 6 beliefs, hooks and MOF scripts; one wave-2 static per belief in two visual systems |
+| 15 Awareness audit | five-stage table | every Schwartz stage has two or more cells; cold-end cells carry no price and run in their own ad set |
+| 16 Package + handoff | build sheet, hub | exact landing URL in a code block, primary text per cell, ad sets assigned, checklist signed, hub links every artifact |
 
 Gates are not optional. If research has no longevity data, it is not research. If a static has no grade, it does not launch.

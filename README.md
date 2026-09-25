@@ -11,7 +11,8 @@ Use it yourself with the templates below, or [have us run it for your clinic](ht
 ```
 0 Intake ─► 1 Research ─► 2 Remix ─► 3 Angles ─► 4 Strategy ─► 5 Copy
         ─► 6 Produce ─► 7 QA + Grade ─► 8 Sizes + Board ─► 9 Benchmark
-        ─► 10 Launch doc + Workout ─► 11 Client review ─► 12 Build ─► 13 Weeks 1–4
+        ─► 14 Belief shift (wave 2) ─► 15 Awareness audit (wave 3)
+        ─► 10 Launch doc + Workout ─► 16 Package + handoff ─► 11 Client review ─► 12 Build ─► 13 Weeks 1–4
 ```
 
 | Day | Phases | Output |
@@ -32,12 +33,16 @@ Read the phases in order in [docs/](docs/00-workflow-map.md). Each one says what
 
 ## What is in here
 
+- `skill/` a Claude Code skill that runs the phases in order (`cp -r skill ~/.claude/skills/clinic-ad-launch`); `SETUP.md` and `tools/check-deps.sh` get a fresh machine to the same output
+- `docs/LESSONS.md` the dated log of what changed the method and why
+
 - `docs/` the method, phase by phase, with gates and time budgets
 - `docs/compliance/` the med-spa claims checklist (FDA wording, before/after, financing disclosures, pixel and PHI)
 - `templates/campaign-folder/` the numbered files every launch produces
-- `templates/prompts/` the static-ad prompt skeletons for any image model
+- `templates/prompts/` the static-ad prompt skeletons for any image model, including the illustrated-hero flat-lay
+- `templates/handoff/` the build sheet and campaign hub a stranger can launch from
 - `templates/review-page/` the client review page: every ad as an in-feed mockup with approve, changes, notes
-- `tools/` `make-sizes.py` (feed 4:5 and story 9:16 with safe zones), `make-board.py` (Excalidraw creative board), research recipes for the Ad Library and Reddit
+- `tools/` `hf-gen.sh` (Higgsfield render wrapper with retry), `contact-sheet.py`, `make-sizes.py` (feed 4:5 and story 9:16), `make-board.py` (Excalidraw board), `living-static-particles.py` and `overlay-text-on-video.py` (motion for winners), research recipes for the Ad Library and Reddit
 - `examples/` a filled scorecard and benchmark so you can see what "done" looks like
 
 ## What is not in here
@@ -46,6 +51,7 @@ Client prices, portraits, media ids, account ids and approvals. Those live in th
 
 ## Run your first launch
 
+0. `./tools/check-deps.sh`, then read `SETUP.md`.
 1. Copy `templates/campaign-folder/` to `campaigns/<client>-<offer>-<MMDD>/`.
 2. Fill `01-research.md` from the landing page, the Ad Library and the forums (recipes in `tools/`).
 3. Work through docs 03 to 09. Do not skip the scorecard.
