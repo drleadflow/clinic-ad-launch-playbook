@@ -12,6 +12,7 @@ Dated. Newest first. Each entry names the run it came from and the rule it produ
 - **Notes-style cells duplicate lines.** Two of two runs. Fix in one refinement: shorter lines, "each line once, never repeated", eight lines max.
 - **Lisa-portrait plus numbered procedure steps failed twice** on the render side. Rule: step lists go text-only; portraits carry a headline, not a procedure.
 - **Packaging is the deliverable.** A build sheet with the exact landing URL in a copy block, primary text per cell, ad-set assignment, and a checklist the builder signs removed every "which page" question. A hub page links every artifact. Rule: phase 16.
+- **Codex image_gen returns transparent PNGs and `codex exec` blocks on stdin.** The wrapper closes stdin (`< /dev/null`) and flattens alpha onto the paper colour before cropping. Rule: any new render backend gets a wrapper with the same four arguments and a live test before it enters the docs. Tool: `tools/codex-gen.sh`.
 - **Narrate.** A long silent run got "are you gonna tell me what you are doing" and a stop. Rule: one line at every phase boundary and before every batch render.
 - **Fill Lisa's book first.** When a client has a new second provider, tag scripts PRACTICE vs PROVIDER so the practice-level ones re-shoot later without a rewrite.
 

@@ -43,7 +43,7 @@ Read the phases in order in [docs/](docs/00-workflow-map.md). Each one says what
 - `templates/prompts/` the static-ad prompt skeletons for any image model, including the illustrated-hero flat-lay
 - `templates/handoff/` the build sheet and campaign hub a stranger can launch from
 - `templates/review-page/` the client review page: every ad as an in-feed mockup with approve, changes, notes
-- `tools/` `hf-gen.sh` (Higgsfield render wrapper with retry), `contact-sheet.py`, `shift-docx.py` (markdown to the styled Word doc, refuses em dashes), `make-sizes.py` (feed 4:5 and story 9:16), `make-board.py` (Excalidraw board), `living-static-particles.py` and `overlay-text-on-video.py` (motion for winners), research recipes for the Ad Library and Reddit
+- `tools/` `hf-gen.sh` (Higgsfield render wrapper with retry), `codex-gen.sh` (same interface on Codex's built-in image_gen), `contact-sheet.py`, `shift-docx.py` (markdown to the styled Word doc, refuses em dashes), `make-sizes.py` (feed 4:5 and story 9:16), `make-board.py` (Excalidraw board), `living-static-particles.py` and `overlay-text-on-video.py` (motion for winners), research recipes for the Ad Library and Reddit
 - `examples/` a filled scorecard and benchmark so you can see what "done" looks like
 
 ## What is not in here

@@ -16,7 +16,11 @@ The method is markdown, shell tools and Python. Nothing in it needs a specific a
    codex mcp list
    ```
    Or edit `~/.codex/config.toml` under `[mcp_servers.<name>]` with `command`, `args`, `env`. Codex plugins already cover Google Drive on some installs (`plugins."google-drive@openai-curated"`), which replaces the Drive MCP for delivery.
-4. **Images.** Two paths. (a) Higgsfield CLI exactly as `docs/13-image-generation.md`, no MCP needed. (b) Codex's own image generation, if your plan includes it: keep the recipe, write a `tools/codex-gen.sh` twin of `hf-gen.sh` that calls it with the same four arguments, then the phases do not change.
+4. **Images.** Two paths. (a) Higgsfield CLI exactly as `docs/13-image-generation.md`, no MCP needed. (b) Codex's built-in `image_gen` tool through `tools/codex-gen.sh`, the twin of `hf-gen.sh` with the same four arguments:
+   ```bash
+   tools/codex-gen.sh <cell> <out-dir> "<ref1.png,ref2.png>" "<prompt>"     # ASPECT=4:5 by default
+   ```
+   It runs `codex exec` non-interactively (stdin closed, `-s workspace-write`, approvals off), tells the agent to call `image_gen` once with your references as `referenced_image_paths`, copies the PNG into `<out-dir>/<cell>.raw.png`, flattens the (usually transparent) PNG onto the paper colour (`BG=FCFAF4` by default, pass another hex for dark cells), then cover-crops to the aspect as `<cell>.png`. Tested 2026-09-25: about 50 seconds per render, output 1122x1402 (already 4:5), strings rendered exactly, reference logo placed. Differences from Higgsfield: references must be local files (no media ids), no 2k option, no identity-lock guarantee for real people (verify on the contact sheet), and each render spends your ChatGPT plan's image budget. Portrait cells still belong on Higgsfield until you have checked identity drift on Codex yourself.
 5. **Reading images.** Codex can view local PNGs; point it at the contact sheet the same way. The QA gate is the same: strings exact, one price, real photos unaltered.
 6. **Narration.** Codex is quieter by default. The skill's "one line per phase boundary" rule still applies; ask it to report before every render batch.
 

@@ -44,7 +44,7 @@ Public method, private data. This skill runs the phases in `docs/` of the clinic
 | 13 | Weeks 1 to 4 | workout plan | motion versions of winners only now (`tools/living-static-particles.py`, `tools/overlay-text-on-video.py`) |
 
 ## Production rules (from `docs/LESSONS.md`; full guide in `docs/13-image-generation.md`)
-- Render with `tools/hf-gen.sh <cell> <dir> "<refs>" "<prompt>"`. It retries once on failure and refreshes an expired session. A second failure means change the recipe, not re-roll.
+- Render with `tools/hf-gen.sh <cell> <dir> "<refs>" "<prompt>"` (Higgsfield) or `tools/codex-gen.sh` with the same arguments on Codex (local reference files only). It retries once on failure and refreshes an expired session. A second failure means change the recipe, not re-roll.
 - Prompt structure: `[VISUAL SYSTEM] → [IDENTITY LOCK] → [LAYOUT with exact quoted strings and the hero's size as a percentage] → [LIGHTING] → [QUALITY] → [AVOID]`.
 - Notes-style cells: eight lines max, "each line once, never repeated".
 - Portrait cells carry a headline, not a numbered procedure (fails on the render side).

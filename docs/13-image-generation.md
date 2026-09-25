@@ -43,7 +43,7 @@ Skeletons in `templates/prompts/`. Batch of 5 to 8, one QA sheet, at most one re
 | zsh did not split the reference flags | the wrapper is bash |
 
 ## Using a different image model
-Keep the recipe, swap the call. Requirements for a substitute: reference images (at least two: one photo, one logo), exact text, 2k output, an aspect of 4:5 or a crop path to it. Known options in the Higgsfield catalogue itself: `gpt_image_2_5` (strong text, weaker identity lock), `flux_2` (fast, weaker text). Outside Higgsfield (OpenAI Images, Gemini image, Ideogram) the same recipe applies; write a sibling of `hf-gen.sh` with the same four arguments so the phases do not change. Whatever the model, the gates are the same: contact sheet, strings exact, one price, real photos unaltered, identity true.
+Keep the recipe, swap the call. Requirements for a substitute: reference images (at least two: one photo, one logo), exact text, 2k output, an aspect of 4:5 or a crop path to it. Known options in the Higgsfield catalogue itself: `gpt_image_2_5` (strong text, weaker identity lock), `flux_2` (fast, weaker text). Outside Higgsfield the same recipe applies. `tools/codex-gen.sh` is the shipped sibling for Codex's built-in image_gen (same four arguments, local reference files only, tested). For OpenAI Images, Gemini image or Ideogram, copy its shape. Whatever the model, the gates are the same: contact sheet, strings exact, one price, real photos unaltered, identity true.
 
 ## Motion, only for winners (phase 13)
 - `tools/living-static-particles.py master.png out45.mp4 out916.mp4 [seconds fps push density]`: procedural particles and a slow push-in over the finished static. No AI touches the master.
