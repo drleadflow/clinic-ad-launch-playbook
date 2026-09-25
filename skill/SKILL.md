@@ -8,6 +8,7 @@ description: Run the Clinic Ad Launch Playbook end to end for one med-spa offer:
 Public method, private data. This skill runs the phases in `docs/` of the clinic-ad-launch-playbook repo. Client prices, portraits, media ids and account ids live in a private client sheet you create at `references/clients/<client>.md` (never commit it here).
 
 ## Before anything
+0. Not on Claude Code? `docs/14-run-on-codex.md` and `AGENTS.md` cover Codex and other agents. Same tools, same phases.
 1. `tools/check-deps.sh` must print no MISSING line.
 2. Read the client sheet if it exists. If not, build it from the landing page (phase 0) before generating anything.
 3. **Narrate.** Say one line at every phase boundary and before every render batch. Silence is a failure mode.
@@ -34,7 +35,7 @@ Public method, private data. This skill runs the phases in `docs/` of the clinic
 | 7 | QA + grade | `docs/07-grading.md` | `12-scorecard.md` |
 | 8 | Sizes + board | `docs/06-production.md` | `tools/make-sizes.py`, `tools/make-board.py` |
 | 9 | Benchmark | `docs/08-benchmark.md` | `13-library-benchmark.md` |
-| 14 | **Belief shift** | `docs/10-belief-shift.md` | `13-shift-framework.md` → wave 2 statics (one per Core 6 belief, two visual systems) |
+| 14 | **Belief shift** | `docs/10-belief-shift.md` | `13-shift-framework.md` (+ `tools/shift-docx.py` for the Word version) → wave 2 statics (one per Core 6 belief, two visual systems) |
 | 15 | **Awareness audit** | `docs/11-awareness-audit.md` | five-stage table → wave 3 (unaware, problem aware, retargeting), no price on the cold ends |
 | 10 | Launch + workout | `docs/09-launch-and-workout.md` | `04-launch-doc.md`, `05-workout-plan.md` |
 | 16 | **Package + handoff** | `docs/12-package-and-handoff.md` | build sheet + hub (`templates/handoff/`), delivery folder, private repo commit |
@@ -42,7 +43,7 @@ Public method, private data. This skill runs the phases in `docs/` of the clinic
 | 12 | Build | `docs/09-launch-and-workout.md` | paused campaign, pre-flight signed, owner activates |
 | 13 | Weeks 1 to 4 | workout plan | motion versions of winners only now (`tools/living-static-particles.py`, `tools/overlay-text-on-video.py`) |
 
-## Production rules (from `docs/LESSONS.md`)
+## Production rules (from `docs/LESSONS.md`; full guide in `docs/13-image-generation.md`)
 - Render with `tools/hf-gen.sh <cell> <dir> "<refs>" "<prompt>"`. It retries once on failure and refreshes an expired session. A second failure means change the recipe, not re-roll.
 - Prompt structure: `[VISUAL SYSTEM] → [IDENTITY LOCK] → [LAYOUT with exact quoted strings and the hero's size as a percentage] → [LIGHTING] → [QUALITY] → [AVOID]`.
 - Notes-style cells: eight lines max, "each line once, never repeated".

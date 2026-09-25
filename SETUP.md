@@ -10,11 +10,14 @@ npm i -g @higgsfield/cli && higgsfield auth login     # browser OAuth; sessions 
 ./tools/check-deps.sh                                   # every required line must say ok
 ```
 
-## 2. Agent (Claude Code) and MCP servers
+## 2. Agent and MCP servers
+Claude Code:
 Install the skill so the agent runs the phases in order:
 ```bash
 cp -r skill ~/.claude/skills/clinic-ad-launch
 ```
+Codex: `cp -r skill ~/.codex/skills/clinic-ad-launch` and read `docs/14-run-on-codex.md` for `codex mcp add`. Other agents: give them `AGENTS.md` and `skill/SKILL.md`.
+
 Connect these MCP servers in the agent: **Meta Ads** (account history, later the paused build), **Apify** (Ad Library and Reddit sweeps), **Notion** (build sheet and hub), **Google Drive** (delivery folder). Optional: NotebookLM CLI (`nlm`) if you keep an ad brain notebook.
 
 ## 3. Private side (never in this repo)
@@ -24,4 +27,4 @@ Client prices, portraits, media ids, account ids, approvals and rendered creativ
 ```bash
 cp -r templates/campaign-folder campaigns/<client>-<offer>-<MMDD>
 ```
-Then follow `skill/SKILL.md` phase by phase. Each phase writes its numbered file and reports one line before moving on.
+Then follow `skill/SKILL.md` phase by phase. Images: `docs/13-image-generation.md`. Word export of the Shift Framework: `python3 tools/shift-docx.py campaigns/<folder>/13-shift-framework.md out.docx --title "<Client>" --subtitle "The Shift Framework: <positioning>" --prepared "Prepared by <agency>"`. Each phase writes its numbered file and reports one line before moving on.
