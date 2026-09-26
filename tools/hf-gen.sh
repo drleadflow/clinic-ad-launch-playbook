@@ -7,9 +7,9 @@ set -u
 cell="$1"; out="$2"; refs="$3"; prompt="$4"
 MODEL="${MODEL:-nano_banana_pro}"; ASPECT="${ASPECT:-4:5}"; RES="${RES:-2k}"
 mkdir -p "$out/jobs"
-args=(); IFS=',' read -ra R <<< "$refs"; for r in "${R[@]}"; do [ -n "$r" ] && args+=(--image-references "$r"); done
+args=(); IFS=',' read -ra R <<< "$refs"; for r in ${R[@]+"${R[@]}"}; do [ -n "$r" ] && args+=(--image-references "$r"); done
 run() {
-  timeout 600 higgsfield generate create "$MODEL" --aspect_ratio "$ASPECT" --resolution "$RES" "${args[@]}" --wait --json --prompt "$prompt" > "$out/jobs/$cell.json" 2>&1
+  timeout 600 higgsfield generate create "$MODEL" --aspect_ratio "$ASPECT" --resolution "$RES" ${args[@]+"${args[@]}"} --wait --json --prompt "$prompt" > "$out/jobs/$cell.json" 2>&1
   python3 - "$out/jobs/$cell.json" "$out/$cell.png" "$cell" <<'PY'
 import json,re,subprocess,sys
 s=open(sys.argv[1]).read(); m=re.search(r'\[\s*\{.*\}\s*\]',s,re.S)
