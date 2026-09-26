@@ -29,3 +29,10 @@ Dated. Newest first. Each entry names the run it came from and the rule it produ
 - The client review page (in-feed mockups, approve / changes / notes) gets three answers in one send: slate, claims, budget.
 - Ad Library video research: Apify scraper without a `fields` projection, dedupe by video URL, rank by days running × variants.
 - Mirrored funnel pattern: page in the client's CRM, logic on a backend, tracking on both.
+
+## 2026-09-26 · MDW Botox run (second offer, same client)
+- **Old creatives can point at dead pages.** The July Botox ads linked to a page that now 404s. Rule: before reusing any account winner as a control, read its link and curl it. Reuse the post only if the link is live; otherwise rebuild the creative from the video id with the live URL.
+- **Advantage+ audience caps the hard age floor at 25.** Set `age_min` 25 and put the real range in `age_range` as a suggestion.
+- **Story padding: sample the pad color from a known background zone**, not the canvas edge at mid-height (it hit a photo and padded a cream ad with grey). Sample just above the footer bar, and check dark-footer designs by hand.
+- **Look at every page image before reusing it.** The offer page carried a treatment-room photo with another clinic's signage. Nothing from a client page goes on an ad unseen.
+- **Second offer for the same client takes about a third of the time**: brand system, logo and provider media ids, audiences and ad set settings all carry over. Reuse them by id, change only the offer facts and age band.
