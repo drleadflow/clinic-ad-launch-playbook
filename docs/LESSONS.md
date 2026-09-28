@@ -36,3 +36,9 @@ Dated. Newest first. Each entry names the run it came from and the rule it produ
 - **Story padding: sample the pad color from a known background zone**, not the canvas edge at mid-height (it hit a photo and padded a cream ad with grey). Sample just above the footer bar, and check dark-footer designs by hand.
 - **Look at every page image before reusing it.** The offer page carried a treatment-room photo with another clinic's signage. Nothing from a client page goes on an ad unseen.
 - **Second offer for the same client takes about a third of the time**: brand system, logo and provider media ids, audiences and ad set settings all carry over. Reuse them by id, change only the offer facts and age band.
+
+## 2026-09-27 · MDW Botox QC + performance pass
+- **Check whether an account's "winning" footage is real before building on it.** Both top Botox videos were Higgsfield renders (file names start `hf_`): one showed an AI "doctor" who is not MDW staff, one an AI look-alike of the real NP. A performance reviewer read them as "real Lisa won". Rule: open the video, compare faces to the client's real staff photos, and archive any ad presenting an AI person as a provider.
+- **Never let the model draw the logo, UI, maps, calendars or embroidery.** Generate the scene, then paste real layers (`tools/paste-logo.py`, OSM tiles, code-built SMS/search screens, `tools/reset-headline.py`). Every generated phone screen, map and calendar in this run was wrong.
+- **Run two reviews, they disagree usefully.** Compliance QC rewards clean text cards; the performance review rewards face + treatment cue + price, which matches account history. Launch from the intersection, and keep price cells and no-price cells in separate ad sets.
+- **Inset text must read at 540px wide.** If it cannot, rebuild it bigger with fewer words instead of shipping it.
