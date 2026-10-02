@@ -2,6 +2,8 @@
 
 Launch document sections: offer; audience and segments; positioning stack; slate (12 cells, both sizes); campaign structure (objective, ad sets, budgets, exclusions, optimisation event on the real conversion, Standard Enhancements off); test design; success metrics (week-1 CPL target, kill line, true north = booked appointments); blockers named (price approval, pixel, dry-run flags, calendar, phone mismatch); 72-hour hands-off; owner approval line.
 
+Price and deposit (mid-ticket offers): show the price on the creative and make the small refundable or credited deposit the action ("Reserve with $X, credited to your session"). Hiding the price buys volume and loses show rate. When the clinic can take a deposit online, test two ad sets at equal budget: instant form (more leads, setter qualifies) against deposit-first (ad → page → calendar with payment, pixel event on the paid deposit). Judge both on cost per paid deposit; cost per lead will always flatter the form.
+
 Workout plan, pre-written before launch:
 
 | Week | Hands on | Rule |

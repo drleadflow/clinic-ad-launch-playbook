@@ -35,7 +35,7 @@ Read the phases in order in [docs/](docs/00-workflow-map.md). Each one says what
 
 - `skill/` a Claude Code skill that runs the phases in order (`cp -r skill ~/.claude/skills/clinic-ad-launch`); `SETUP.md` and `tools/check-deps.sh` get a fresh machine to the same output
 - `docs/LESSONS.md` the dated log of what changed the method and why
-- `docs/13-image-generation.md` how statics are rendered (Higgsfield CLI, the prompt recipe, failure modes, swapping the model); `docs/14-run-on-codex.md` running the same playbook on Codex or another agent; `AGENTS.md` for agents that read it
+- `docs/13-image-generation.md` how statics are rendered (Higgsfield CLI, the prompt recipe, failure modes, swapping the model); `docs/14-run-on-codex.md` running the same playbook on Codex or another agent; `docs/15-ai-ugc-video.md` the AI UGC video pipeline (reference frame, talking avatar, voice clone, edit); `AGENTS.md` for agents that read it
 
 - `docs/` the method, phase by phase, with gates and time budgets
 - `docs/compliance/` the med-spa claims checklist (FDA wording, before/after, financing disclosures, pixel and PHI)
