@@ -1,6 +1,6 @@
 # 00 · Workflow map
 
-Seventeen phases (14 to 16 were added after the MDW lip filler run, see docs/LESSONS.md), one numbered file each, one folder per launch. Nothing launches without the files. The time budget is one ad manager, one offer: Day 1 phases 0 to 3, Day 2 phases 4 to 7, Day 3 phases 8 to 11, Day 4 to 5 phase 12. A second offer for the same clinic takes about half, because the client sheet, the skeleton, the clinicians and the board are inherited.
+Seventeen phases (14 to 16 were added after the Clinic B lip filler run, see docs/LESSONS.md), one numbered file each, one folder per launch. Nothing launches without the files. The time budget is one ad manager, one offer: Day 1 phases 0 to 3, Day 2 phases 4 to 7, Day 3 phases 8 to 11, Day 4 to 5 phase 12. A second offer for the same clinic takes about half, because the client sheet, the skeleton, the clinicians and the board are inherited.
 
 | Phase | File | Definition of done |
 |---|---|---|

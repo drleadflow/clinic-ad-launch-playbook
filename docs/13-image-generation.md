@@ -8,7 +8,7 @@ npm i -g @higgsfield/cli
 higgsfield auth login            # browser OAuth. Sessions expire; a job that prints "Session expired" needs this again
 higgsfield model list            # image models include nano_banana_pro, gpt_image_2_5, flux_2
 higgsfield model get nano_banana_pro   # accepted params for a job type
-higgsfield upload create ./lisa.jpg    # -> media id (UUID). Use ids for anything reused across cells
+higgsfield upload create ./provider.jpg    # -> media id (UUID). Use ids for anything reused across cells
 ```
 **References.** `--image-references` takes a UUID or a local path (paths auto-upload). Order matters: the prompt says "the FIRST reference image is…", "the SECOND reference image (logo)…". Reuse one uploaded id for a real person across the whole run so identity stays consistent. A stale id that starts producing drift is "poisoned": upload again.
 
