@@ -1,6 +1,6 @@
 # Setup: run this playbook on a fresh machine
 
-Target: a new ad manager or agent clones this repo and produces the same outputs as the reference runs (TVAAI Endolaser/CO2/T-Shape/Mommy Tummy, MDW lip filler) with no tribal knowledge.
+Target: a new ad manager or agent clones this repo and produces the same outputs as the reference runs (Clinic A Endolaser/CO2/T-Shape/post-pregnancy body offer, Clinic B lip filler) with no tribal knowledge.
 
 ## 1. Tools
 ```bash

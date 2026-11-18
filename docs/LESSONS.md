@@ -2,7 +2,7 @@
 
 Dated. Newest first. Each entry names the run it came from and the rule it produced. Add to this file, never to memory.
 
-## 2026-10-01 · TVAAI CoolPeel (second offer on a running account) + Nurse Friend UGC video
+## 2026-10-01 · Clinic A CoolPeel (second offer on a running account) + Clinic C UGC video
 - **Mine your own winner before the market.** An ad-level breakdown of the account's live offer showed one static carrying 87% of spend at the account's best cost per lead, with near-identical siblings that never got delivery. That template (offer as headline, one huge price, "normally" anchor, bonus box, one calm aspirational person, claim-style CTA, about 25 words on the image) became wave 2 for the next offer. Rule: phase 1 step 0 reads the account at ad level first; the Ad Library comes second. Caveat: when Meta crowns one ad on day one, the losers were never tested, so credit the format, not the pose.
 - **Sort the web Ad Library by impressions, not recency.** The API and the default UI sort newest first, which hides the long runners. The browser URL with `search_type=keyword_exact_phrase`, the term in quotes and `sort_data[mode]=total_impressions` surfaces what is actually spending. Unordered keyword search matches the words separately ("cool" + "peel"); always use exact phrase for device names.
 - **Organic reels re-cut into paid ads are the cheapest real proof.** The client's own procedure clips beat any render for credibility. Recipe in `docs/06-production.md`. Gates: commercial music stripped (paid placements reject it), patient ad consent separate from posting consent, and the treatment depth or mode confirmed when the overlay names one ("deep" footage under a light-treatment offer sets the wrong recovery expectation).
@@ -10,7 +10,7 @@ Dated. Newest first. Each entry names the run it came from and the rule it produ
 - **Show the price, make the deposit the action.** Hiding a mid-ticket price raises lead volume and sinks show rate; the price filters, the small deposit removes the fear. Test instant form against deposit-first as separate ad sets and judge both on cost per paid deposit, never cost per lead. Design in `docs/09-launch-and-workout.md`.
 - **AI UGC video is its own pipeline.** Real reference frame, locked prompt with only the dialogue changing, one voice clone for the whole series, colour-matched takes, clean cuts with a caption sidecar instead of burned captions. Full method in `docs/15-ai-ugc-video.md`.
 
-## 2026-09-25 · MDW lip filler $399 (33 statics, Shift Framework, awareness audit, motion tests)
+## 2026-09-25 · Clinic B lip filler $399 (33 statics, Shift Framework, awareness audit, motion tests)
 - **Statics before motion.** Animating before the slate was chosen burned credits on a layout that got redesigned twice. Rule: motion is a week-two decision on proven winners (phase 13), never part of production.
 - **State the hero's size.** The first flat-lay had an empty centre. Rule: every layout prompt states the hero element's width as a percentage of frame and where the type stacks relative to it.
 - **Belief-level angles were missing.** The 16-angle bank covers product and proof only. The Shift Framework (Core 6 beliefs) added time, money, help, cost of inaction and identity lanes and produced 13 statics in one pass. Rule: phase 14 runs after the first roster, before wave 2.
@@ -18,7 +18,7 @@ Dated. Newest first. Each entry names the run it came from and the rule it produ
 - **Deterministic text beats re-rolling.** Lifting the type as a diff mask (dark pixels, zone-restricted) from a generated static and compositing it onto a new background gave an exact result where a second generation drifted. Same layer burns onto video. Tools: `overlay-text-on-video.py`.
 - **Higgsfield CLI traps.** Session expiry mid-batch; "failed" with no reason (retry once, then change the recipe: drop the portrait, shorten lines); `$399` eaten by the shell in a folder name (never put `$` in paths); zsh not splitting `$args` (wrapper is bash). Tool: `tools/hf-gen.sh`.
 - **Notes-style cells duplicate lines.** Two of two runs. Fix in one refinement: shorter lines, "each line once, never repeated", eight lines max.
-- **Lisa-portrait plus numbered procedure steps failed twice** on the render side. Rule: step lists go text-only; portraits carry a headline, not a procedure.
+- **Provider-portrait plus numbered procedure steps failed twice** on the render side. Rule: step lists go text-only; portraits carry a headline, not a procedure.
 - **Packaging is the deliverable.** A build sheet with the exact landing URL in a copy block, primary text per cell, ad-set assignment, and a checklist the builder signs removed every "which page" question. A hub page links every artifact. Rule: phase 16.
 - **Codex image_gen returns transparent PNGs and `codex exec` blocks on stdin.** The wrapper closes stdin (`< /dev/null`) and flattens alpha onto the paper colour before cropping. Rule: any new render backend gets a wrapper with the same four arguments and a live test before it enters the docs. Tool: `tools/codex-gen.sh`.
 - **Confirm the ad account before building.** A client can have two: the previous agency's and yours. Ours had the client's own pixel and campaigns with our UTMs; the other had a bigger history and the same page and Instagram attached. The build went into the wrong one and was deleted. Rule: phase 0 records the account id, business name and pixel id together, and the build sheet control panel names the wrong account explicitly. Check `get_ad_accounts` for duplicates by client name.
@@ -26,9 +26,9 @@ Dated. Newest first. Each entry names the run it came from and the rule it produ
 - **Custom Audience TOS is per account and per user.** A fresh account cannot create website audiences until both are accepted in the browser. Do it during phase 0 setup, not on launch day.
 - **Never put a judgement word about the viewer in a headline.** "Is it vain to want lip filler?" was disapproved (mislabelled as Financial by the automated reviewer; the real trigger is the personal-attribute read). Rule: hooks name the situation, never the viewer's trait. "Wanting a little more is allowed" passed the same gate. Keep a copy-only variant and an image variant ready so a disapproval costs one round trip, not a day.
 - **Narrate.** A long silent run got "are you gonna tell me what you are doing" and a stop. Rule: one line at every phase boundary and before every batch render.
-- **Fill Lisa's book first.** When a client has a new second provider, tag scripts PRACTICE vs PROVIDER so the practice-level ones re-shoot later without a rewrite.
+- **Fill the lead injector's book first.** When a client has a new second provider, tag scripts PRACTICE vs PROVIDER so the practice-level ones re-shoot later without a rewrite.
 
-## 2026-09-04 to 09-18 · TVAAI Endolaser, CO2, T-Shape, Mommy Tummy
+## 2026-09-04 to 09-18 · Clinic A Endolaser, CO2, T-Shape, post-pregnancy body offer
 - Price is a decision, not a fact: every price on the client sheet is marked live or unapproved; unapproved means no price on any ad.
 - Device-led copy loses to offer-led copy. Lead with price, included, bonus.
 - Never a computed total in a headline ("3 sessions × $X"); one price shape per image.
@@ -38,15 +38,15 @@ Dated. Newest first. Each entry names the run it came from and the rule it produ
 - Ad Library video research: Apify scraper without a `fields` projection, dedupe by video URL, rank by days running × variants.
 - Mirrored funnel pattern: page in the client's CRM, logic on a backend, tracking on both.
 
-## 2026-09-26 · MDW Botox run (second offer, same client)
+## 2026-09-26 · Clinic B Botox run (second offer, same client)
 - **Old creatives can point at dead pages.** The July Botox ads linked to a page that now 404s. Rule: before reusing any account winner as a control, read its link and curl it. Reuse the post only if the link is live; otherwise rebuild the creative from the video id with the live URL.
 - **Advantage+ audience caps the hard age floor at 25.** Set `age_min` 25 and put the real range in `age_range` as a suggestion.
 - **Story padding: sample the pad color from a known background zone**, not the canvas edge at mid-height (it hit a photo and padded a cream ad with grey). Sample just above the footer bar, and check dark-footer designs by hand.
 - **Look at every page image before reusing it.** The offer page carried a treatment-room photo with another clinic's signage. Nothing from a client page goes on an ad unseen.
 - **Second offer for the same client takes about a third of the time**: brand system, logo and provider media ids, audiences and ad set settings all carry over. Reuse them by id, change only the offer facts and age band.
 
-## 2026-09-27 · MDW Botox QC + performance pass
-- **Check whether an account's "winning" footage is real before building on it.** Both top Botox videos were Higgsfield renders (file names start `hf_`): one showed an AI "doctor" who is not MDW staff, one an AI look-alike of the real NP. A performance reviewer read them as "real Lisa won". Rule: open the video, compare faces to the client's real staff photos, and archive any ad presenting an AI person as a provider.
+## 2026-09-27 · Clinic B Botox QC + performance pass
+- **Check whether an account's "winning" footage is real before building on it.** Both top Botox videos were Higgsfield renders (file names start `hf_`): one showed an AI "doctor" who is not Clinic B staff, one an AI look-alike of the real NP. A performance reviewer read them as "the real provider won". Rule: open the video, compare faces to the client's real staff photos, and archive any ad presenting an AI person as a provider.
 - **Never let the model draw the logo, UI, maps, calendars or embroidery.** Generate the scene, then paste real layers (`tools/paste-logo.py`, OSM tiles, code-built SMS/search screens, `tools/reset-headline.py`). Every generated phone screen, map and calendar in this run was wrong.
 - **Run two reviews, they disagree usefully.** Compliance QC rewards clean text cards; the performance review rewards face + treatment cue + price, which matches account history. Launch from the intersection, and keep price cells and no-price cells in separate ad sets.
 - **Inset text must read at 540px wide.** If it cannot, rebuild it bigger with fewer words instead of shipping it.
